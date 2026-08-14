@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Daryeel Rural Development For Action</title>
+  <meta name="description" content="Learn about Daryeel Rural Development For Action — a nonprofit founded by Somali diaspora in Minnesota, USA, transforming education and community development in the Somali Region of Ethiopia." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- PAGE HERO IMAGE ---- */
+    .page-hero {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: #0f2560;
+    }
+    .page-hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.55;
+      display: block;
+    }
+    .page-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(15,37,96,0.45) 0%, rgba(15,37,96,0.75) 100%);
+    }
+    .page-hero__text {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding-bottom: 2.2rem;
+    }
+    .page-hero__text h1 { color: #fff; font-size: 1.9rem; margin-bottom: 0.35rem; }
+    .page-hero__text .page-banner__sub { color: #a8c8f8; font-size: 0.92rem; font-style: italic; display: block; }
+
+    /* ---- PAGE HEADER BANNER ---- */
+    .page-banner {
+      background: #0f2560;
+      padding: 2.8rem 0 2.2rem;
+      border-bottom: 3px solid #1a44c8;
+      display: none; /* replaced by page-hero */
+    }
+
+    /* ---- INTRO ---- */
+    .about-intro {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e6e3de;
+    }
+    .about-intro-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-intro-layout .about-intro-text p {
+      max-width: 100%;
+    }
+    .about-intro-layout img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .about-intro .mission-highlight {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #1a44c8;
+      margin-top: 1.2rem;
+      max-width: 680px;
+    }
+
+    /* ---- MISSION ---- */
+    .about-mission {
+      padding: 3rem 0 2.5rem;
+      background: #f5f3ee;
+      border-bottom: 1px solid #e6e3de;
+    }
+    .about-mission h2 { margin-bottom: 1.2rem; }
+    .about-mission ul {
+      max-width: 640px;
+      padding-left: 1.4rem;
+    }
+    .about-mission ul li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* ---- APPROACH ---- */
+    .about-approach {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 1px solid #e6e3de;
+    }
+    .about-approach h2 { margin-bottom: 1.8rem; }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .approach-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-top: 3px solid #1a44c8;
+      padding: 1.5rem 1.3rem;
+    }
+    .approach-card h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #1a44c8;
+      margin-bottom: 0.55rem;
+    }
+    .approach-card p {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+
+    /* ---- ORG FACTS ---- */
+    .about-org {
+      padding: 3rem 0 2.5rem;
+      background: #f5f3ee;
+    }
+    .about-org h2 { margin-bottom: 1.5rem; }
+    .org-facts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      max-width: 620px;
+      border: 1px solid #ddd;
+      background: #fff;
+    }
+    .org-fact {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid #e6e3de;
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+    }
+    .org-fact:nth-last-child(-n+2) { border-bottom: none; }
+    .org-fact__label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1a44c8;
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+    .org-fact__value {
+      font-size: 0.92rem;
+      color: #222;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .org-facts { grid-template-columns: 1fr; }
+      .about-intro-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+      .about-intro-layout img { display: none; }
+      .org-fact:nth-last-child(-n+2) { border-bottom: 1px solid #e6e3de; }
+      .org-fact:last-child { border-bottom: none; }
+    }
+    @media (max-width: 640px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .org-facts { grid-template-columns: 1fr; }
+      .org-fact:nth-last-child(-n+2) { border-bottom: 1px solid #e6e3de; }
+      .org-fact:last-child { border-bottom: none; }
+      .page-hero__text h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span class="top-bar__tagline">Somali Region, Ethiopia &middot; Diaspora-Led &middot; Community-Driven</span>
+      <div>
+        <a href="mailto:daryeerlural@gmail.com">daryeerlural@gmail.com</a>
+        <a href="tel:+251704737473">+251 704 737 473</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Daryeel — Home">
+        <div class="site-logo__icon">D</div>
+        <div>
+          <span class="site-logo__name">Daryeel</span>
+          <span class="site-logo__sub">Rural Development For Action</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="main-nav" id="main-nav">
+          <li class="main-nav__item">
+            <a href="about.html" class="main-nav__link" aria-current="page">About Us ▾</a>
+            <ul class="main-nav__dropdown">
+              <li><a href="about.html#who-we-are">Who We Are</a></li>
+              <li><a href="about.html#our-mission">Our Mission</a></li>
+              <li><a href="about.html#our-approach">Our Approach</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item">
+            <a href="projects.html" class="main-nav__link">Our Projects ▾</a>
+            <ul class="main-nav__dropdown">
+              <li><a href="projects.html#shaykosh">Shaykosh Boarding School</a></li>
+              <li><a href="projects.html#girls">Girls' Education</a></li>
+              <li><a href="projects.html#trees">Tree Planting</a></li>
+              <li><a href="projects.html#wash">WASH Program</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item">
+            <a href="impact.html" class="main-nav__link">Impact</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="gallery.html" class="main-nav__link">Gallery</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="contact.html" class="main-nav__link">Contact</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="donate.html" class="btn-donate" id="nav-donate-btn">Donate</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+  <div class="page-hero" id="who-we-are">
+    <img src="images/daryeel/file37.jpeg"
+      alt="Aerial view of Shaykosh Boarding School campus at dusk, Somali Region of Ethiopia"
+      class="page-hero__img" />
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="page-hero__text">
+      <div class="container">
+        <h1>About Us</h1>
+        <span class="page-banner__sub">Transforming Lives in the Somali Region of Ethiopia</span>
+      </div>
+    </div>
+  </div>
+
+    <!-- WHO WE ARE -->
+    <section class="about-intro section" aria-labelledby="who-we-are-heading">
+      <div class="container">
+        <h2 id="who-we-are-heading">Who We Are</h2>
+        <div class="about-intro-layout">
+          <div class="about-intro-text">
+            <p>Daryeel Rural Development For Action is a nonprofit organization founded by Somali diaspora members in Minnesota, USA, working in close partnership with local communities and the Ethiopian government to transform education and living conditions in the Somali Region of Ethiopia.</p>
+            <p style="margin-top: 1rem;">Our flagship project — the Shaykosh Boarding School in Kebri Dahar — serves 454 boarding students from 7 zones, including 62 girls, and supports a total of 7,102 students.</p>
+            <p class="mission-highlight">We believe that every child deserves dignity, safety, and a quality education.</p>
+          </div>
+          <div>
+            <img src="images/daryeel/file81.jpeg"
+              alt="Daryeel leadership and officials visiting the school construction site"
+              loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR MISSION -->
+    <section class="about-mission" id="our-mission" aria-labelledby="mission-heading">
+      <div class="container">
+        <h2 id="mission-heading">Our Mission</h2>
+        <p style="margin-bottom: 1.1rem;">To advance sustainable community development in the Somali Region of Ethiopia, through:</p>
+        <ul>
+          <li>Promoting quality education</li>
+          <li>Empowering girls and young women</li>
+          <li>Protecting the environment</li>
+          <li>Advancing green housing solutions</li>
+          <li>Improving access to clean water, sanitation, and hygiene (WASH)</li>
+          <li>Responding effectively to emergencies</li>
+          <li>Strengthening community development</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="about-approach" id="our-approach" aria-labelledby="approach-heading">
+      <div class="container">
+        <h2 id="approach-heading">Our Approach</h2>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <h3>Education</h3>
+            <p>Ensuring every child, especially girls, has access to quality education and a safe learning environment.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Sustainability</h3>
+            <p>Tree planting, green spaces, rainwater harvesting, and eco-friendly development for lasting change.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Dignity</h3>
+            <p>Modern WASH facilities, safe dormitories, and nutritious meals preserve the dignity of every student.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Community</h3>
+            <p>Projects are community-owned, government-partnered, and diaspora-funded for genuine local impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORGANIZATION FACTS -->
+    <section class="about-org" id="organization" aria-labelledby="org-heading">
+      <div class="container">
+        <h2 id="org-heading">Organization</h2>
+        <div class="org-facts" role="table" aria-label="Organization facts">
+          <div class="org-fact" role="row">
+            <span class="org-fact__label" role="rowheader">Founded</span>
+            <span class="org-fact__value" role="cell">2024</span>
+          </div>
+          <div class="org-fact" role="row">
+            <span class="org-fact__label" role="rowheader">Diaspora</span>
+            <span class="org-fact__value" role="cell">Minnesota, USA</span>
+          </div>
+          <div class="org-fact" role="row">
+            <span class="org-fact__label" role="rowheader">Location</span>
+            <span class="org-fact__value" role="cell">Somali Region, Ethiopia</span>
+          </div>
+          <div class="org-fact" role="row">
+            <span class="org-fact__label" role="rowheader">Flagship Project</span>
+            <span class="org-fact__value" role="cell">Shaykosh Boarding School, Kebri Dahar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <span class="footer-org-name">Daryeel Rural Development For Action</span>
+          <p class="footer-tagline">Empowering Pastoralist Communities Through Education, Sustainability &amp; Dignity in the Somali Region of Ethiopia.</p>
+          <p class="footer-proverb">"Gacmo Wadajir bay Wax ku Gooyaan"<br><span style="font-style:normal; font-size:0.78rem; color:#888;">"Together, hands can cut through anything."</span></p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Our Projects</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html#get-involved">Get Involved</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="projects.html#shaykosh">Shaykosh Boarding School</a></li>
+            <li><a href="projects.html#girls">Girls' Education</a></li>
+            <li><a href="projects.html#trees">Tree Planting &amp; Green</a></li>
+            <li><a href="projects.html#wash">WASH Program</a></li>
+            <li><a href="projects.html#community">Community Development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            <strong style="color:#ddd; font-family:Arial;">Eng. Hamza</strong><br />
+            <a href="tel:+251704737473" style="color:#bbb; text-decoration:none;">+251 704 737 473</a><br />
+            <a href="mailto:daryeerlural@gmail.com" style="color:#bbb; text-decoration:none;">daryeerlural@gmail.com</a><br /><br />
+            Sheygoash, Somali Region<br />
+            Ethiopia
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Daryeel Rural Development For Action. All rights reserved.</span>
+        <span>Diaspora-led &middot; Community-driven &middot; Transparent</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

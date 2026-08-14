@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects — Daryeel Rural Development For Action</title>
+  <meta name="description" content="Explore Daryeel's projects: Shaykosh Boarding School renovation, Girls' Education empowerment, Tree Planting & Greening, and WASH improvements in the Somali Region of Ethiopia." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- PAGE HERO ---- */
+    .page-hero {
+      position: relative;
+      min-height: 440px; height: 440px;
+      overflow: hidden;
+      background: #0f2560;
+    }
+    .page-hero__img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.90;
+      display: block;
+    }
+    .page-hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(15,37,96,0.4) 0%, rgba(15,37,96,0.78) 100%);
+    }
+    .page-hero__text {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding-bottom: 2.4rem;
+    }
+    .page-hero__text h1 { color: #fff; font-size: 1.9rem; margin-bottom: 0.35rem; }
+    .page-hero__sub { color: #a8c8f8; font-size: 0.92rem; font-style: italic; }
+
+    /* ---- INTRO ---- */
+    .projects-intro-section {
+      padding: 2.4rem 0 2rem;
+      border-bottom: 1px solid #e6e3de;
+      text-align: center;
+    }
+    .projects-intro-section p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    /* ---- PROJECT BLOCK ---- */
+    .project-block {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid #e6e3de;
+    }
+    .project-block:nth-child(even) { background: #f5f3ee; }
+
+    .project-block__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .project-block__inner.reverse { direction: rtl; }
+    .project-block__inner.reverse > * { direction: ltr; }
+
+    .project-block__tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #fff;
+      background: #1a44c8;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+    .project-block h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+      color: #1a1a1a;
+    }
+    .project-block__body p {
+      font-size: 0.93rem;
+      color: #444;
+      margin-bottom: 1rem;
+      max-width: 100%;
+    }
+    .project-block__stat {
+      background: #edf2fb;
+      border: 1px solid #c0d4f5;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .project-block__stat strong {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: #1a44c8;
+    }
+    .project-block__stat span { font-size: 0.88rem; color: #444; }
+
+    .project-block__list { list-style: none; padding: 0; margin: 0 0 1.4rem; }
+    .project-block__list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid #e6e3de;
+      font-size: 0.91rem;
+      color: #333;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .project-block__list li::before {
+      content: '→';
+      color: #1a44c8;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* ---- PROJECT PHOTO GROUP ---- */
+    .project-photos { display: flex; flex-direction: column; gap: 0.6rem; }
+    .project-photos__main {
+      width: 100%; height: 280px;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .project-photos__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .project-photos__row img {
+      width: 100%; height: 155px;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+
+    /* ---- ACHIEVEMENTS ---- */
+    .achievements-section {
+      padding: 3.5rem 0;
+      background: #0f2560;
+    }
+    .achievements-section h2 { color: #fff; text-align: center; margin-bottom: 0.5rem; }
+    .achievements-intro { color: #a8c8f8; text-align: center; max-width: 600px; margin: 0 auto 2.2rem; font-size: 0.92rem; }
+
+    .achieve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .achieve-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+    .achieve-card__img {
+      width: 100%; height: 160px;
+      object-fit: cover; object-position: center;
+      display: block;
+      opacity: 0.88;
+    }
+    .achieve-card__body { padding: 1rem 1.1rem 1.3rem; }
+    .achieve-card__body h4 {
+      font-family: Georgia, serif;
+      font-size: 0.98rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      font-weight: bold;
+    }
+    .achieve-card__body p { font-size: 0.84rem; color: #b0c8f0; max-width: 100%; }
+
+    /* ---- DONATE CTA ---- */
+    .projects-cta {
+      padding: 2.8rem 0;
+      text-align: center;
+      background: #f5f3ee;
+      border-top: 1px solid #e6e3de;
+    }
+    .projects-cta h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .projects-cta p { color: #555; font-size: 0.91rem; margin: 0 auto 1.4rem; }
+    .projects-cta .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .project-block__inner,
+      .project-block__inner.reverse { grid-template-columns: 1fr; direction: ltr; gap: 1.8rem; }
+      .project-photos__main { height: 220px; }
+      .achieve-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .page-hero { min-height: 340px; height: 340px; }
+      .page-hero__text h1 { font-size: 1.4rem; }
+      .achieve-grid { grid-template-columns: 1fr; }
+      .project-photos__row { grid-template-columns: 1fr; }
+      .project-photos__row img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span class="top-bar__tagline">Somali Region, Ethiopia &middot; Diaspora-Led &middot; Community-Driven</span>
+      <div>
+        <a href="mailto:daryeerlural@gmail.com">daryeerlural@gmail.com</a>
+        <a href="tel:+251704737473">+251 704 737 473</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Daryeel — Home">
+        <div class="site-logo__icon">D</div>
+        <div>
+          <span class="site-logo__name">Daryeel</span>
+          <span class="site-logo__sub">Rural Development For Action</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="main-nav" id="main-nav">
+          <li class="main-nav__item">
+            <a href="about.html" class="main-nav__link">About Us ▾</a>
+            <ul class="main-nav__dropdown">
+              <li><a href="about.html#who-we-are">Who We Are</a></li>
+              <li><a href="about.html#our-mission">Our Mission</a></li>
+              <li><a href="about.html#our-approach">Our Approach</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item">
+            <a href="projects.html" class="main-nav__link" aria-current="page">Our Projects ▾</a>
+            <ul class="main-nav__dropdown">
+              <li><a href="projects.html#shaykosh">Shaykosh Boarding School</a></li>
+              <li><a href="projects.html#girls">Girls' Education</a></li>
+              <li><a href="projects.html#trees">Tree Planting</a></li>
+              <li><a href="projects.html#wash">WASH Program</a></li>
+            </ul>
+          </li>
+          <li class="main-nav__item">
+            <a href="impact.html" class="main-nav__link">Impact</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="gallery.html" class="main-nav__link">Gallery</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="contact.html" class="main-nav__link">Contact</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="donate.html" class="btn-donate" id="nav-donate-btn">Donate</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <img src="images/daryeel/file36.jpeg"
+        alt="Aerial view of Shaykosh Boarding School campus, Kebri Dahar"
+        class="page-hero__img" />
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="page-hero__text">
+        <div class="container">
+          <h1>Our Programs &amp; Projects</h1>
+          <span class="page-hero__sub">Transforming Lives in Kebri Dahar and the Somali Region</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="projects-intro-section">
+      <div class="container">
+        <p>From renovating a historic boarding school to planting fruit trees and building clean restrooms — every project transforms lives in Kebri Dahar and the Somali Region.</p>
+      </div>
+    </div>
+
+    <!-- PROJECT 1: SHAYKOSH BOARDING SCHOOL -->
+    <section class="project-block" id="shaykosh" aria-labelledby="shaykosh-heading">
+      <div class="container">
+        <div class="project-block__inner">
+          <div class="project-block__body">
+            <span class="project-block__tag">Flagship Project</span>
+            <h2 id="shaykosh-heading">Shaykosh Boarding School</h2>
+            <p>Renovating and upgrading Ethiopia's premier boarding school for pastoralist children — library, dormitories, boundary walls, main gate, and road construction.</p>
+            <ul class="project-block__list" aria-label="Key work">
+              <li>Library renovation and furnishing</li>
+              <li>Dormitory improvements</li>
+              <li>Boundary wall construction</li>
+              <li>Main gate construction</li>
+              <li>Road construction</li>
+            </ul>
+            <a href="donate.html" class="btn-primary" id="shaykosh-donate-btn">Support This Project</a>
+          </div>
+          <div class="project-photos">
+            <img src="images/daryeel/file38.jpeg"
+              alt="Wide aerial view of Shaykosh Boarding School campus at dusk"
+              class="project-photos__main" loading="lazy" />
+            <div class="project-photos__row">
+              <img src="images/daryeel/file39.jpeg"
+                alt="Community leaders laying foundation stones for the school boundary wall"
+                loading="lazy" />
+              <img src="images/daryeel/file17.jpeg"
+                alt="Graded school campus road lined with trees and boundary markers"
+                loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 2: GIRLS' EDUCATION -->
+    <section class="project-block" id="girls" aria-labelledby="girls-heading">
+      <div class="container">
+        <div class="project-block__inner reverse">
+          <div class="project-block__body">
+            <span class="project-block__tag">Empowerment</span>
+            <h2 id="girls-heading">Girls' Education</h2>
+            <p>Providing uniforms, school supplies, safe separate sanitation facilities, and a nurturing environment to keep girls in school and thriving.</p>
+            <div class="project-block__stat">
+              <strong>62</strong>
+              <span>girls currently enrolled at Shaykosh Boarding School</span>
+            </div>
+            <p>The organization's stated goal is to reach <strong>at least 70% female enrollment</strong> through targeted support and infrastructure improvements.</p>
+            <ul class="project-block__list" aria-label="Support includes">
+              <li>School uniforms</li>
+              <li>Exercise books, pens and school bags</li>
+              <li>Separate sanitation facilities</li>
+              <li>Safe dormitory spaces</li>
+              <li>Academic support &amp; mentorship</li>
+              <li>Library access</li>
+            </ul>
+            <a href="donate.html" class="btn-primary" id="girls-donate-btn">Support This Project</a>
+          </div>
+          <div class="project-photos">
+            <img src="images/daryeel/file15.jpeg"
+              alt="Students seated together in a bright classroom at Shaykosh Boarding School"
+              class="project-photos__main" loading="lazy" />
+            <div class="project-photos__row">
+              <img src="images/daryeel/file7.jpeg"
+                alt="Girls in blue hijabs reading books in the school classroom"
+                loading="lazy" />
+              <img src="images/daryeel/file49.jpeg"
+                alt="Group of girls students outside the Education Officer's office"
+                loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 3: TREE PLANTING -->
+    <section class="project-block" id="trees" aria-labelledby="trees-heading">
+      <div class="container">
+        <div class="project-block__inner">
+          <div class="project-block__body">
+            <span class="project-block__tag">Sustainability</span>
+            <h2 id="trees-heading">Tree Planting &amp; Greening</h2>
+            <p>Over <strong>1,000 fruit and shade trees</strong> have been planted, including mango, papaya, and avocado, alongside vegetable gardens, rainwater harvesting, and full compound greening.</p>
+            <ul class="project-block__list" aria-label="Focus areas">
+              <li>Fruit trees — mango, papaya, avocado</li>
+              <li>Shade trees throughout the campus</li>
+              <li>Vegetable gardens</li>
+              <li>Rainwater harvesting systems</li>
+              <li>Greening the school compound</li>
+            </ul>
+            <a href="donate.html" class="btn-primary" id="trees-donate-btn">Support This Project</a>
+          </div>
+          <div class="project-photos">
+            <img src="images/daryeel/file23.jpeg"
+              alt="Green trees growing alongside the school boundary wall"
+              class="project-photos__main" loading="lazy" />
+            <div class="project-photos__row">
+              <img src="images/daryeel/file31.jpeg"
+                alt="Community leaders holding young tree saplings at a planting ceremony"
+                loading="lazy" />
+              <img src="images/daryeel/file21.jpeg"
+                alt="Lush green trees established along the campus perimeter"
+                loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 4: WASH -->
+    <section class="project-block" id="wash" aria-labelledby="wash-heading">
+      <div class="container">
+        <div class="project-block__inner reverse">
+          <div class="project-block__body">
+            <span class="project-block__tag">WASH</span>
+            <h2 id="wash-heading">Water, Sanitation &amp; Hygiene</h2>
+            <p>New modern restrooms for boys and girls, shower facilities, handwashing stations, and expanded water supply for the whole school campus.</p>
+            <ul class="project-block__list" aria-label="Key improvements">
+              <li>Modern restrooms for boys</li>
+              <li>Modern restrooms for girls</li>
+              <li>Shower facilities</li>
+              <li>Handwashing stations</li>
+              <li>Expanded water supply</li>
+              <li>New water tanks</li>
+              <li>Water piping to dormitories, classrooms, and WASH facilities</li>
+            </ul>
+            <a href="donate.html" class="btn-primary" id="wash-donate-btn">Support This Project</a>
+          </div>
+          <div class="project-photos">
+            <img src="images/daryeel/file1.jpeg"
+              alt="Renovated school building with solar street light and raised plant beds"
+              class="project-photos__main" loading="lazy" />
+            <div class="project-photos__row">
+              <img src="images/daryeel/file2.jpeg"
+                alt="Newly painted classroom block exterior with grille windows"
+                loading="lazy" />
+              <img src="images/daryeel/file3.jpeg"
+                alt="School courtyard with raised planter beds and solar lighting at dusk"
+                loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements-section" id="achievements" aria-labelledby="achieve-heading">
+      <div class="container">
+        <h2 id="achieve-heading">Completed Work on the Ground</h2>
+        <p class="achievements-intro">Every donation translates directly into tangible improvements that students and teachers see and feel every single day.</p>
+        <div class="achieve-grid">
+          <div class="achieve-card">
+            <img src="images/daryeel/file10.jpeg"
+              alt="Library shelves filled with donated books"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>Library Renovated &amp; Furnished</h4>
+              <p>Complete renovation of the school library with new shelving, reading tables, chairs, and hundreds of books donated.</p>
+            </div>
+          </div>
+          <div class="achieve-card">
+            <img src="images/daryeel/file4.jpeg"
+              alt="Students using renovated classroom facilities"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>New Restrooms &amp; Showers</h4>
+              <p>Separate modern toilet and shower blocks for boys and girls, with handwashing stations at every entrance.</p>
+            </div>
+          </div>
+          <div class="achieve-card">
+            <img src="images/daryeel/file37.jpeg"
+              alt="Aerial view showing water tower and campus infrastructure"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>Water Supply Expanded</h4>
+              <p>New water tanks and piping extended to dormitories, classrooms, and WASH facilities across the campus.</p>
+            </div>
+          </div>
+          <div class="achieve-card">
+            <img src="images/daryeel/file33.jpeg"
+              alt="Community leaders holding tree saplings during a planting ceremony"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>1,000+ Trees Planted</h4>
+              <p>Mango, papaya, avocado, and shade trees transforming a bare compound into a lush green campus.</p>
+            </div>
+          </div>
+          <div class="achieve-card">
+            <img src="images/daryeel/file18.jpeg"
+              alt="School road lined with established boundary markers and trees"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>Boundary Wall &amp; Main Gate</h4>
+              <p>New perimeter boundary wall and landmark entrance gate built, securing and beautifying the school campus.</p>
+            </div>
+          </div>
+          <div class="achieve-card">
+            <img src="images/daryeel/file22.jpeg"
+              alt="Solar street light installed next to green trees on the campus boundary"
+              class="achieve-card__img" loading="lazy" />
+            <div class="achieve-card__body">
+              <h4>Solar Lighting Installed</h4>
+              <p>Solar-powered lighting for dormitories enabling students to study safely after dark.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATE CTA -->
+    <div class="projects-cta">
+      <div class="container">
+        <h3>Help Us Do More</h3>
+        <p>Every contribution — large or small — directly funds these projects on the ground.</p>
+        <div class="cta-buttons">
+          <a href="donate.html" class="btn-primary" id="projects-donate-btn">Donate Now</a>
+          <a href="contact.html#partner" class="btn-outline" id="projects-partner-btn">Partner With Us</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <span class="footer-org-name">Daryeel Rural Development For Action</span>
+          <p class="footer-tagline">Empowering Pastoralist Communities Through Education, Sustainability &amp; Dignity in the Somali Region of Ethiopia.</p>
+          <p class="footer-proverb">"Gacmo Wadajir bay Wax ku Gooyaan"<br><span style="font-style:normal; font-size:0.78rem; color:#888;">"Together, hands can cut through anything."</span></p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Our Projects</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html#get-involved">Get Involved</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Programs</h4>
+          <ul>
+            <li><a href="projects.html#shaykosh">Shaykosh Boarding School</a></li>
+            <li><a href="projects.html#girls">Girls' Education</a></li>
+            <li><a href="projects.html#trees">Tree Planting &amp; Green</a></li>
+            <li><a href="projects.html#wash">WASH Program</a></li>
+            <li><a href="projects.html#achievements">Completed Work</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            <strong style="color:#ddd; font-family:Arial;">Eng. Hamza</strong><br />
+            <a href="tel:+251704737473" style="color:#bbb; text-decoration:none;">+251 704 737 473</a><br />
+            <a href="mailto:daryeerlural@gmail.com" style="color:#bbb; text-decoration:none;">daryeerlural@gmail.com</a><br /><br />
+            Sheygoash, Somali Region<br />
+            Ethiopia
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Daryeel Rural Development For Action. All rights reserved.</span>
+        <span>Diaspora-led &middot; Community-driven &middot; Transparent</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
