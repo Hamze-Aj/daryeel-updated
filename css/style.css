@@ -1346,3 +1346,220 @@ textarea.form-input {
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .contact-form-card { padding: 1.5rem 1.2rem; }
 }
+
+/* ============================================================
+   OUR TEAM PAGE STYLES (Traditional Non-Profit / Institutional)
+   ============================================================ */
+
+.team-nav-bar {
+  background: #f5f3ee;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e6e3de;
+  position: sticky;
+  top: 61px;
+  z-index: 90;
+}
+.team-nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.team-nav-link {
+  font-size: 0.84rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.team-nav-link:hover {
+  background: #1a44c8;
+  color: #fff;
+  border-color: #1a44c8;
+}
+
+.team-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid #e6e3de;
+}
+.team-section:nth-child(even) {
+  background: #f5f3ee;
+}
+
+.team-tier-header {
+  margin-bottom: 2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #1a44c8;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.team-tier-header h2 {
+  font-size: 1.6rem;
+  color: #0f2560;
+}
+.team-tier-header__tag {
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1a44c8;
+  background: #edf2fb;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #c0d4f5;
+}
+
+/* TEAM GRID & CARDS (Traditional Normal Profile Cards) */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+.team-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+.team-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: 3px solid #1a44c8;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.team-card__img-box {
+  width: 100%;
+  height: 200px;
+  background: #e9ecef;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card__placeholder {
+  color: #777;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.team-card__placeholder::before {
+  content: "📷";
+  font-size: 1rem;
+}
+
+.team-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #e9ecef;
+}
+.team-card__img:not([src]),
+.team-card__img[src=""] {
+  display: none;
+}
+
+.team-card__body {
+  padding: 1.2rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.team-card__name {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0f2560;
+  margin-bottom: 0.2rem;
+}
+
+.team-card__title {
+  font-size: 0.86rem;
+  font-weight: bold;
+  color: #1a44c8;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+.team-card__desc {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* HIERARCHY CHART TABLE */
+.hierarchy-section {
+  padding: 3.5rem 0;
+  background: #f5f3ee;
+}
+.hierarchy-table-wrapper {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 3px solid #1a44c8;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+.hierarchy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.hierarchy-table th,
+.hierarchy-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+.hierarchy-table th {
+  background: #edf2fb;
+  color: #0f2560;
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-bottom: 2px solid #c0d4f5;
+}
+.hierarchy-table tr:hover td {
+  background: #fcfcfc;
+}
+.hierarchy-level-tag {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+.level-exec { background: #0f2560; color: #fff; }
+.level-head { background: #1a44c8; color: #fff; }
+.level-ops { background: #e2e8f0; color: #1e293b; }
+.level-board { background: #475569; color: #fff; }
+
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-grid--3col { grid-template-columns: 1fr; }
+}
+
