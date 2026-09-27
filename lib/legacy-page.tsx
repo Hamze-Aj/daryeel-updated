@@ -9,12 +9,13 @@ function readBody(fileName: string) {
   const filePath = path.join(process.cwd(), 'content', 'legacy', fileName);
   const source = fs.readFileSync(filePath, 'utf8');
   const body = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1];
+  const styles = source.match(/<style[^>]*>[\s\S]*?<\/style>/gi)?.join('\n') ?? '';
 
   if (!body) {
     throw new Error(`Could not find a body in ${fileName}`);
   }
 
-  return body
+  return `${styles}\n${body}`
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/(src|href)="images\//g, '$1="/images/')
     .replace(/href="index\.html"/g, 'href="/"')
