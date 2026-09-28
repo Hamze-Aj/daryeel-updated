@@ -8,19 +8,23 @@ export default function SiteInteractions() {
     const nav = document.getElementById('main-nav');
 
     if (toggle && nav) {
-      const closeMenu = () => {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.textContent = '☰';
-      };
+      if (toggle.dataset.navBound === 'true') return;
 
-      toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('is-open');
+      const setMenuState = (isOpen: boolean) => {
+        nav.classList.toggle('is-open', isOpen);
         toggle.setAttribute('aria-expanded', String(isOpen));
         toggle.textContent = isOpen ? '✕' : '☰';
-      });
+      };
 
+      const toggleMenu = () => {
+        setMenuState(!nav.classList.contains('is-open'));
+      };
+
+      const closeMenu = () => setMenuState(false);
+
+      toggle.addEventListener('click', toggleMenu);
       nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+      toggle.dataset.navBound = 'true';
     }
 
     const carousel = document.getElementById('hero-carousel');
